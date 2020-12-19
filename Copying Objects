@@ -1,0 +1,22 @@
+Proem "                                                   بسم الله الرحمن الرحيم                           "
+package test;
+
+public class Clone implements Cloneable{
+    int id;
+    String name;
+    Clone(int id , String name){
+        this.id = id;
+        this.name = name;
+    }
+    public Object clone() throws CloneNotSupportedException{ //Method clone(); is derived from Object class..
+        return super.clone();
+    }
+    public static void main (String [] args){
+        try {
+            Clone s = new Clone(1000, "Ahmad");
+            Clone q = (Clone) s.clone();
+            System.out.println("ID: " + s.id + " " + "Name:" +s.name);
+            System.out.println(q.id + " " + q.name);
+        }catch(CloneNotSupportedException c){}
+    }//Implemented Successfully....
+}
